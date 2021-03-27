@@ -1,0 +1,10 @@
+version: 1.0
+Resources:
+  - TargetService:
+      Type: AWS::ECS::Service
+      Properties:
+        TaskDefinition: "arn:aws:ecs:us-east-1:651975211405:task-definition/severity-td:1"
+        LoadBalancerInfo:
+          ContainerName: "mfpe-module"
+          ContainerPort: "9092"
+        PlatformVersion: "LATEST"
